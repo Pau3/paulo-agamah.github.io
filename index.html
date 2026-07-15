@@ -377,5 +377,18 @@
 </footer>
 
 <script src="js/script.js"></script>
-</body>
+  <!-- Visit notification -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init({ publicKey: "RF7jWeNy8y0_uFpco" });
+      emailjs.send("service_0xl35ga", "template_4wdmdzc", {
+        time: new Date().toLocaleString(),
+        referrer: document.referrer || "Direct / unknown",
+        user_agent: navigator.userAgent,
+        page: window.location.href
+      });
+    })();
+  </script>
+  body>
 </html>
